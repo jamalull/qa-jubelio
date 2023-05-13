@@ -1,0 +1,410 @@
+{
+	"id": "758ffd2a-bc25-4eb5-9c02-f34d623cd848",
+	"name": "API Testing - QA Jubellio",
+	"timestamp": "2023-05-10T16:17:25.869Z",
+	"collection_id": "15157184-9e11eb87-4c25-4cee-818f-f8a11cd2975c",
+	"folder_id": 0,
+	"environment_id": "15157184-2a6968e2-eb9a-4464-a8db-4f25a6b54990",
+	"totalPass": 12,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-05-10T16:17:21.045Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "c21ec097-17c2-4f07-b6dd-3b6e6ef9e40c",
+			"name": "(+) Login",
+			"url": "https://api.jubelio.com/login",
+			"time": 1066,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200 : Login Succesfully": true,
+				"Login Succesfully and token has been stored": true,
+				"Login Succesfully with correct userName": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200 : Login Succesfully": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Login Succesfully and token has been stored": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Login Succesfully with correct userName": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1066
+			],
+			"allTests": [
+				{
+					"Status code is 200 : Login Succesfully": true,
+					"Login Succesfully and token has been stored": true,
+					"Login Succesfully with correct userName": true
+				}
+			]
+		},
+		{
+			"id": "1df1ffe4-bc68-4800-be2a-25fa7b6d8ef8",
+			"name": "(-) Login - Invalid username",
+			"url": "https://api.jubelio.com/login?email=qarakaminjubelio@gmail.com&password=Jubelio123!",
+			"time": 153,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Login Failed => Username is Invalid": true
+			},
+			"testPassFailCounts": {
+				"Login Failed => Username is Invalid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				153
+			],
+			"allTests": [
+				{
+					"Login Failed => Username is Invalid": true
+				}
+			]
+		},
+		{
+			"id": "374a8019-305c-49b3-b783-bdb4fcc32cb9",
+			"name": "(-) Login - Invalid password",
+			"url": "https://api.jubelio.com/login",
+			"time": 765,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Login Failed => Password is Invalid": true
+			},
+			"testPassFailCounts": {
+				"Login Failed => Password is Invalid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				765
+			],
+			"allTests": [
+				{
+					"Login Failed => Password is Invalid": true
+				}
+			]
+		},
+		{
+			"id": "fec2d2da-118a-4857-87be-c0ef6701fe7d",
+			"name": "(-) Login - Invalid username and password",
+			"url": "https://api.jubelio.com/login",
+			"time": 147,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Login Failed => Username & Password is Invalid": true
+			},
+			"testPassFailCounts": {
+				"Login Failed => Username & Password is Invalid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				147
+			],
+			"allTests": [
+				{
+					"Login Failed => Username & Password is Invalid": true
+				}
+			]
+		},
+		{
+			"id": "015bc574-f3fd-408c-a05c-e3570df45275",
+			"name": "(-) Login - Blank Body",
+			"url": "https://api.jubelio.com/login",
+			"time": 135,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Can't Login => Authentication failed": true
+			},
+			"testPassFailCounts": {
+				"Can't Login => Authentication failed": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				135
+			],
+			"allTests": [
+				{
+					"Can't Login => Authentication failed": true
+				}
+			]
+		},
+		{
+			"id": "98825595-249f-49f6-9d6d-0a06820add84",
+			"name": "(+) All Product Price",
+			"url": "https://api.jubelio.com/inventory/internal-price-list/",
+			"time": 278,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				278
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f2a399a4-1ba5-4bda-a7b1-205fa9ea392c",
+			"name": "(-) All Product Price - No Auth",
+			"url": "https://api.jubelio.com/inventory/internal-price-list/",
+			"time": 67,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Can't get all product price => Authentication failed": true
+			},
+			"testPassFailCounts": {
+				"Can't get all product price => Authentication failed": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				67
+			],
+			"allTests": [
+				{
+					"Can't get all product price => Authentication failed": true
+				}
+			]
+		},
+		{
+			"id": "a9cb0ad2-a775-4a06-a978-57cdd3d68cb2",
+			"name": "(+) Upload Product Image",
+			"url": "https://api.jubelio.com/inventory/upload-image?success=true&name=Termurah__Rice_Cooker_Miyako_Mcm_606_A___Magic_Com_06l___Pen.jpg&key=https://jubelio.blob.core.windows.net/images/bngb2liirsoobzqmj73egg/636d4589-f8b3-4271-aa96-403d11ce3a6f.jpeg&thumbnail=https://jubelio.blob.core.windows.net/images/bngb2liirsoobzqmj73egg/636d4589-f8b3-4271-aa96-403d11ce3a6f_thumb.jpeg",
+			"time": 190,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				190
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ce5c80cd-ecc3-41d2-bdf5-8a7b29d301a1",
+			"name": "(-) Upload Product Image  - No Auth",
+			"url": "https://api.jubelio.com/inventory/upload-image?success=true&name=Termurah__Rice_Cooker_Miyako_Mcm_606_A___Magic_Com_06l___Pen.jpg&key=https://jubelio.blob.core.windows.net/images/bngb2liirsoobzqmj73egg/636d4589-f8b3-4271-aa96-403d11ce3a6f.jpeg&thumbnail=https://jubelio.blob.core.windows.net/images/bngb2liirsoobzqmj73egg/636d4589-f8b3-4271-aa96-403d11ce3a6f_thumb.jpeg",
+			"time": 157,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Can't Upload Product Image => Authentication failed": true
+			},
+			"testPassFailCounts": {
+				"Can't Upload Product Image => Authentication failed": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				157
+			],
+			"allTests": [
+				{
+					"Can't Upload Product Image => Authentication failed": true
+				}
+			]
+		},
+		{
+			"id": "7eb8fb5c-5d47-4b87-ae50-059b4c2a8c81",
+			"name": "(-) Upload Product Image - Blank Body",
+			"url": "https://api.jubelio.com/inventory/upload-image",
+			"time": 139,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Can't Upload Product Image => 400 Bad Request No value in API body": true
+			},
+			"testPassFailCounts": {
+				"Can't Upload Product Image => 400 Bad Request No value in API body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				139
+			],
+			"allTests": [
+				{
+					"Can't Upload Product Image => 400 Bad Request No value in API body": true
+				}
+			]
+		},
+		{
+			"id": "42406ef8-6251-4638-9b4e-88b7c52b422e",
+			"name": "(+) Delete Product",
+			"url": "https://api.jubelio.com/inventory/items/",
+			"time": 194,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				194
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d87078d7-6aff-4e5b-8cd8-d5fa7b03b973",
+			"name": "(-) Delete Product - No Auth",
+			"url": "https://api.jubelio.com/inventory/items/",
+			"time": 174,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Can't Delete Product => Authentication failed": true
+			},
+			"testPassFailCounts": {
+				"Can't Delete Product => Authentication failed": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				174
+			],
+			"allTests": [
+				{
+					"Can't Delete Product => Authentication failed": true
+				}
+			]
+		},
+		{
+			"id": "fcbb54c6-a4e9-47aa-b273-d574427a6154",
+			"name": "(-) Delete Product - Blank Body",
+			"url": "https://api.jubelio.com/inventory/items/",
+			"time": 81,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Can't Delete Product => Authentication failed": true
+			},
+			"testPassFailCounts": {
+				"Can't Delete Product => Authentication failed": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				81
+			],
+			"allTests": [
+				{
+					"Can't Delete Product => Authentication failed": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 3546,
+	"collection": {
+		"requests": [
+			{
+				"id": "c21ec097-17c2-4f07-b6dd-3b6e6ef9e40c",
+				"method": "POST"
+			},
+			{
+				"id": "1df1ffe4-bc68-4800-be2a-25fa7b6d8ef8",
+				"method": "POST"
+			},
+			{
+				"id": "374a8019-305c-49b3-b783-bdb4fcc32cb9",
+				"method": "POST"
+			},
+			{
+				"id": "fec2d2da-118a-4857-87be-c0ef6701fe7d",
+				"method": "POST"
+			},
+			{
+				"id": "015bc574-f3fd-408c-a05c-e3570df45275",
+				"method": "POST"
+			},
+			{
+				"id": "98825595-249f-49f6-9d6d-0a06820add84",
+				"method": "GET"
+			},
+			{
+				"id": "f2a399a4-1ba5-4bda-a7b1-205fa9ea392c",
+				"method": "GET"
+			},
+			{
+				"id": "a9cb0ad2-a775-4a06-a978-57cdd3d68cb2",
+				"method": "POST"
+			},
+			{
+				"id": "ce5c80cd-ecc3-41d2-bdf5-8a7b29d301a1",
+				"method": "POST"
+			},
+			{
+				"id": "7eb8fb5c-5d47-4b87-ae50-059b4c2a8c81",
+				"method": "POST"
+			},
+			{
+				"id": "42406ef8-6251-4638-9b4e-88b7c52b422e",
+				"method": "DELETE"
+			},
+			{
+				"id": "d87078d7-6aff-4e5b-8cd8-d5fa7b03b973",
+				"method": "DELETE"
+			},
+			{
+				"id": "fcbb54c6-a4e9-47aa-b273-d574427a6154",
+				"method": "DELETE"
+			}
+		]
+	}
+}
