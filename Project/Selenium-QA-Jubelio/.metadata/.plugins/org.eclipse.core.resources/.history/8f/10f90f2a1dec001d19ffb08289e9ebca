@@ -1,0 +1,10 @@
+/**
+ * 
+ */
+/**
+ * @author ASUS
+ *
+ */
+module selenium {
+	requires org.seleniumhq.selenium.api;
+}
